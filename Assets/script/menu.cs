@@ -5,6 +5,8 @@ using UnityEngine;
 public class menu : MonoBehaviour
 {
     public GameObject canvas;
+    public GameObject credits;
+
     void Start()
     {
         Time.timeScale = 0;
@@ -14,7 +16,7 @@ public class menu : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Escape)){
             canvas.SetActive(true);
             Time.timeScale = 0;
-            GameObject button = GameObject.Find("play");
+            GameObject button = GameObject.Find("Start Game");
             button.GetComponentInChildren<UnityEngine.UI.Text>().text = "Play";
         }
     }
@@ -22,6 +24,21 @@ public class menu : MonoBehaviour
     {
         //lancer scene suivante
         canvas.SetActive(false);
+        credits.SetActive(false);
+    }
+
+    public void credit()
+    {
+        //lancer scene suivante
+        credits.SetActive(true);
+        canvas.SetActive(false);
+    }
+
+    public void back_to_menu()
+    {
+        //lancer scene suivante
+        canvas.SetActive(true);
+        credits.SetActive(false);
     }
 
 }
