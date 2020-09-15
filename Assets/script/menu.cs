@@ -22,7 +22,7 @@ public class menu : MonoBehaviour
     }
     public void play()
     {
-        //lancer scene suivante
+        Time.timeScale = 1;
         canvas.SetActive(false);
         credits.SetActive(false);
     }
