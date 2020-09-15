@@ -937,7 +937,7 @@ Transform:
   m_LocalScale: {x: 7.5, y: 9.7875, z: 10}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &607891503
 MonoBehaviour:
@@ -1432,6 +1432,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1306407366}
   - component: {fileID: 1306407365}
+  - component: {fileID: 1306407367}
   m_Layer: 0
   m_Name: reel
   m_TagString: Untagged
@@ -1495,12 +1496,25 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1306407364}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.08, y: -24.22, z: 0}
+  m_LocalPosition: {x: -0.08, y: -9.06, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1306407367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1306407364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf287dd935c124201a7ba71445029358, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vitesse: 2
 --- !u!1 &1333448240
 GameObject:
   m_ObjectHideFlags: 0
@@ -1758,7 +1772,7 @@ Transform:
   m_LocalScale: {x: 111.00098, y: 3.11985, z: 13.13621}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1621852393
 BoxCollider2D:
