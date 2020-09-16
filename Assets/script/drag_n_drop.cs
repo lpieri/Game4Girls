@@ -19,6 +19,7 @@ public class drag_n_drop : MonoBehaviour
     void Update()
     {
         if(isDragging && !hasBeenDragged){
+            //do some things
             Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
             transform.Translate(mousePosition);
         }
