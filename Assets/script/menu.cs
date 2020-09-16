@@ -47,6 +47,9 @@ public class menu : MonoBehaviour
         gameOverCanvas.SetActive(false);
         Application.LoadLevel("menu");
     }
-			
+	
+    public void Quit(){
+        Application.Quit();
+    }
 
 }
