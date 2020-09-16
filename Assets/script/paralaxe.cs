@@ -20,11 +20,11 @@ public class paralaxe : MonoBehaviour
 	void Update () 
 	{
 		GameObject player = GameObject.Find("Player");
-		float vitesseHorizontalePlayer = player.GetComponent<Rigidbody2D>().velocity.y * -1;
-		//Debug.Log("vitesse = "+vitesseHorizontalePlayer);
+		float vitesseVerticalePlayer = player.GetComponent<Rigidbody2D>().velocity.y * -1;
+		//Debug.Log("vitesse = "+vitesseVerticalePlayer);
 
-		if(vitesseHorizontalePlayer != 0){
-			float toMove = vitesseHorizontalePlayer * vitesse * Time.deltaTime;
+		if(vitesseVerticalePlayer > 0){
+			float toMove = vitesseVerticalePlayer * vitesse * Time.deltaTime;
 			transform.Translate(Vector3.up*toMove, Space.World);
 			this._score = this._score + 1;
 			this.score.GetComponent<UnityEngine.UI.Text>().text = this._score.ToString();
@@ -34,7 +34,7 @@ public class paralaxe : MonoBehaviour
 			transform.Translate(Vector3.up*toMove, Space.World);
 		}
 
-		if (this._score % 100 == 0){
+		if (this._score != 0 && this._score % 100 == 0){
 			this._coin = this._coin + 1;
 			this.coin.GetComponent<UnityEngine.UI.Text>().text = this._coin.ToString();
 		}
