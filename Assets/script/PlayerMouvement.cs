@@ -11,10 +11,13 @@ public class PlayerMouvement : MonoBehaviour
 	private bool isGrounded;
 	private float horizontalMovement = 0;
 	private int sens = 1;
+	private AudioSource musique;
+	
 
     void Start()
     {
         gameObject.GetComponent<SpriteRenderer>().flipX = true;
+		this.musique = gameObject.GetComponent<AudioSource>();
     }
 
 	void FixedUpdate() {
@@ -30,7 +33,9 @@ public class PlayerMouvement : MonoBehaviour
 		if (coll.gameObject.tag == "sol"){
 			//meurt
 			Time.timeScale = 0;
+			this.musique.Stop();
 			gameOver.SetActive(true);
+			gameOver.transform.Find("score").GetComponent<UnityEngine.UI.Text>().text = GameObject.Find("Quad").transform.Find("score_canvas").transform.Find("score").GetComponent<UnityEngine.UI.Text>().text;
 		}
 		else if (coll.gameObject.tag == "mur"){
 			//se tourne
