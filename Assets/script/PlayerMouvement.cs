@@ -5,12 +5,12 @@ using UnityEngine;
 public class PlayerMouvement : MonoBehaviour
 {
 	public float moveSpeed;
-	public Transform groundCheckLeft;
-	public Transform groundCheckRight;
 	public Rigidbody2D rigidBody;
+	public GameObject gameOver;
 	private Vector3 velocity = Vector3.zero;
 	private bool isGrounded;
 	private float horizontalMovement = 0;
+	private int sens = 1;
 
 	void FixedUpdate() {
 		MovePlayer(this.horizontalMovement);
@@ -22,16 +22,18 @@ public class PlayerMouvement : MonoBehaviour
 	}
 
 	void OnCollisionEnter2D(Collision2D coll){
-		if (coll.gameObject.tag == "Sol"){
+		if (coll.gameObject.tag == "sol"){
 			//meurt
-			Debug.Log("collision avec "+ coll.gameObject.name);
+			Time.timeScale = 0;
+			gameOver.SetActive(true);
 		}
 		else if (coll.gameObject.tag == "plateform"){
 			//marche
-			this.horizontalMovement = moveSpeed * Time.deltaTime;
+			this.horizontalMovement = moveSpeed * Time.deltaTime * this.sens;
 		}
 		else if (coll.gameObject.tag == "mur"){
 			//se tourne
+			this.sens = this.sens * -1;
 			this.horizontalMovement = this.horizontalMovement * -1;
 		}
 	}
@@ -39,7 +41,7 @@ public class PlayerMouvement : MonoBehaviour
 	
 	void OnCollisionExit2D(Collision2D coll){
 		if (coll.gameObject.tag == "plateform"){
-			//marche
+			//tombe
 			this.horizontalMovement = 0;
 		}
 	}

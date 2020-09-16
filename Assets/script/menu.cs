@@ -6,11 +6,13 @@ public class menu : MonoBehaviour
 {
     public GameObject canvas;
     public GameObject credits;
+    public GameObject gameOverCanvas;
 
     void Start()
     {
         Time.timeScale = 0;
     }
+
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.Escape)){
@@ -40,5 +42,11 @@ public class menu : MonoBehaviour
         canvas.SetActive(true);
         credits.SetActive(false);
     }
+
+    public void gameOver(){
+        gameOverCanvas.SetActive(false);
+        Application.LoadLevel("menu");
+    }
+			
 
 }

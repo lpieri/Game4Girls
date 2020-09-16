@@ -7,6 +7,8 @@ TagManager:
   - plateform
   - sol
   - mur
+  - score
+  - coin
   layers:
   - Default
   - TransparentFX
