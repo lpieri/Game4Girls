@@ -4794,7 +4794,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2017146480
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4969,7 +4969,7 @@ PrefabInstance:
     - target: {fileID: 4601276604006961401, guid: e2fa7fa9b32ae401cbaa46614be83a64,
         type: 3}
       propertyPath: m_FlipX
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4601276604006961401, guid: e2fa7fa9b32ae401cbaa46614be83a64,
         type: 3}
@@ -5086,6 +5086,11 @@ PrefabInstance:
       propertyPath: gameOver
       value: 
       objectReference: {fileID: 1125742696}
+    - target: {fileID: 4601276604006961382, guid: e2fa7fa9b32ae401cbaa46614be83a64,
+        type: 3}
+      propertyPath: moveSpeed
+      value: 200
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2fa7fa9b32ae401cbaa46614be83a64, type: 3}
 --- !u!1001 &4353152144752623540

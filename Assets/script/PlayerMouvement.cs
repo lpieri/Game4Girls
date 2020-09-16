@@ -33,8 +33,10 @@ public class PlayerMouvement : MonoBehaviour
 		}
 		else if (coll.gameObject.tag == "mur"){
 			//se tourne
+			//Debug.Log("collide dans " + coll.gameObject.tag);
 			this.sens = this.sens * -1;
 			this.horizontalMovement = this.horizontalMovement * -1;
+			gameObject.GetComponent<SpriteRenderer>().flipX = !gameObject.GetComponent<SpriteRenderer>().flipX;
 		}
 	}
 
