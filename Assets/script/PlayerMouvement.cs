@@ -22,6 +22,7 @@ public class PlayerMouvement : MonoBehaviour
 	}
 
 	void OnCollisionEnter2D(Collision2D coll){
+		//Debug.Log("collider dans  = "+coll.gameObject.name + "  tag :" + tag);
 		if (coll.gameObject.tag == "sol"){
 			//meurt
 			Time.timeScale = 0;
@@ -38,7 +39,6 @@ public class PlayerMouvement : MonoBehaviour
 		}
 	}
 
-	
 	void OnCollisionExit2D(Collision2D coll){
 		if (coll.gameObject.tag == "plateform"){
 			//tombe
