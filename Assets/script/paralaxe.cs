@@ -51,15 +51,12 @@ public class paralaxe : MonoBehaviour
 			if (firstChild != null) {
 				if (firstChild.position.y > Camera.main.transform.position.y) {
 					if (firstChild.GetComponent<Renderer>().IsVisibleFrom(Camera.main) == false) {
-						Debug.Log("Coucou");
 						Transform lastChild = backgroundPart[backgroundPart.Count - 1];
 						Vector3 lastPosition = lastChild.transform.position;
 						Vector3 lastSize = (lastChild.GetComponent<Renderer>().bounds.min - lastChild.GetComponent<Renderer>().bounds.max);
-						Debug.Log(backgroundPart[0]);
 						backgroundPart.Remove(firstChild);
 						firstChild.position = new Vector3(firstChild.position.x, lastPosition.y + lastSize.y, firstChild.position.z);
 						backgroundPart.Add(firstChild);
-						Debug.Log(backgroundPart[0]);
 					}
 				}
 			}
