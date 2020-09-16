@@ -53,6 +53,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\script\drag_n_drop.cs" />
      <Compile Include="Assets\script\menu.cs" />
      <Compile Include="Assets\script\paralaxe.cs" />
      <Compile Include="Assets\script\PlayerMouvement.cs" />
