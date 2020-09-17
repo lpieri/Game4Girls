@@ -7,14 +7,18 @@ public class drag_n_drop : MonoBehaviour
     private bool isDragging;
     private bool hasBeenDragged;
 
-    public void OnMouseDown(){
+    void Start(){
         gameObject.GetComponent<Collider2D>().isTrigger = true;
+    }
+
+    public void OnMouseDown(){
         isDragging = true;
     }
 
     public void OnMouseUp(){
         isDragging = false;
         gameObject.GetComponent<Collider2D>().isTrigger = false;
+        gameObject.transform.Find("overlay").gameObject.SetActive(false);
         hasBeenDragged = true;
     }
 
@@ -23,6 +27,12 @@ public class drag_n_drop : MonoBehaviour
         if(isDragging && !hasBeenDragged){
             Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
             transform.Translate(mousePosition);
+        }
+    }
+
+    void OnCollisionEnter2D(Collision2D coll){
+		if (coll.gameObject.name == "plafond"){
+			Destroy(coll.gameObject, 1);
         }
     }
 }
