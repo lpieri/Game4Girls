@@ -19,18 +19,18 @@ public class Generateur_plat : MonoBehaviour
 
     void Update(){
         float espacement = 0F;
-        if (this.i < 2){
+        if (this.i < 10){
             espacement = 2F;
             go = Instantiate(this.prefab) as GameObject;
         }
-        else if (this.i  >= 2 && this.i < 5){
+        else if (this.i  >= 10 && this.i < 40){
             espacement = 2.2F;
             go = Instantiate(getRandomPrefab(2)) as GameObject;
         }
-        else if(this.i >= 5 && this.i < 10){
+        else if(this.i >= 40 && this.i < 55){
             espacement = 2.4F;
             go = Instantiate(getRandomPrefab(3)) as GameObject;
-        }else if(this.i >= 10 && this.i < 20){
+        }else if(this.i >= 55 && this.i < 80){
             espacement = 2.6F;
             go = Instantiate(getRandomPrefab(3)) as GameObject;
         }else{
@@ -47,16 +47,16 @@ public class Generateur_plat : MonoBehaviour
         int ran = Random.Range(0, 100);
 
         if (j == 2){
-            if (ran >= 0 && ran < 80){
+            if (ran >= 0 && ran < 65){
                 return this.prefab;
             }else{
                 return this.prefab_KC;
             }
         }
         else{
-            if (ran >= 0 && ran < 50){
+            if (ran >= 0 && ran < 40){
                 return this.prefab;
-            }else if (ran >= 50 && ran < 80){
+            }else if (ran >= 40 && ran < 75){
                 return this.prefab_KC;
             }else{
                 return this.prefab_Glace;
