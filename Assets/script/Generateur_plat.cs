@@ -24,17 +24,17 @@ public class Generateur_plat : MonoBehaviour
             go = Instantiate(this.prefab) as GameObject;
         }
         else if (this.i  >= 10 && this.i < 40){
-            espacement = 2.2F;
+            espacement = 2.1F;
             go = Instantiate(getRandomPrefab(2)) as GameObject;
         }
         else if(this.i >= 40 && this.i < 55){
-            espacement = 2.4F;
+            espacement = 2.2F;
             go = Instantiate(getRandomPrefab(3)) as GameObject;
         }else if(this.i >= 55 && this.i < 80){
-            espacement = 2.6F;
+            espacement = 2.3F;
             go = Instantiate(getRandomPrefab(3)) as GameObject;
         }else{
-            espacement = 2.8F;
+            espacement = 2.4F;
             go = Instantiate(getRandomPrefab(3)) as GameObject;
         }
         go.transform.position = new Vector3(gameObject.transform.position.x + 10F,gameObject.transform.position.y - this.i*espacement,0);

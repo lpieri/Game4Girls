@@ -6,9 +6,18 @@ public class drag_n_drop : MonoBehaviour
 {
     private bool isDragging;
     private bool hasBeenDragged;
+    private AudioSource blop;
+    private GameObject droit ;
+    private GameObject gauche;
+
 
     void Start(){
+        this.droit  = gameObject.transform.Find("coté_droit").gameObject;
+        this.gauche = gameObject.transform.Find("coté_gauche").gameObject;
         gameObject.GetComponent<Collider2D>().isTrigger = true;
+        droit.GetComponent<Collider2D>().isTrigger = true;
+        gauche.GetComponent<Collider2D>().isTrigger = true;
+        this.blop = GameObject.Find("Main Camera").GetComponent<AudioSource>();
     }
 
     public void OnMouseDown(){
@@ -18,8 +27,12 @@ public class drag_n_drop : MonoBehaviour
     public void OnMouseUp(){
         isDragging = false;
         gameObject.GetComponent<Collider2D>().isTrigger = false;
+        this.droit.GetComponent<Collider2D>().isTrigger = false;
+        this.gauche.GetComponent<Collider2D>().isTrigger = false;
         gameObject.transform.Find("overlay").gameObject.SetActive(false);
         hasBeenDragged = true;
+        this.blop.Play();
+
     }
 
     void Update()
